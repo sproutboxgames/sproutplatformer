@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e8f5c8;
+  font-family: sans-serif;
+  position: relative;
+  flex-direction: column;
+}
+
+canvas {
+  border: 2px solid #4caf50;
+  background-color: #f0ffd9;
+  width: auto;
+  height: auto;
+
+}
+
+#gameCanvas {
+  width: 1000px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #444; /* optional, helps visualize size */
+}
+
+
+.screen {
+  display: none;
+  position: absolute;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.screen.active {
+  display: flex;
+}
+
+#gameOverScreen.screen {
+  display: none;
+  position: absolute;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#gameOverScreen.screen.active {
+  display: flex;
+}
+
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+#jumpHint {
+  position: absolute;
+  top: 40px;
+  font-size: 18px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: none;
+}
+
+#crouchHint {
+  position: absolute;
+  top: 3px;
+  font-size: 18px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: none;
+}
+
+#rewardMessage {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.audio-controls {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.audio-controls label {
+  display: block;
+  margin: 5px 0;
+}
+
+.scoreDisplay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #66bb6a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.screen {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.screen.active {
+  display: block;
+}
+
+#gameOverScreen p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#playerNameInput {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#gameOverScreen.active {
+  display: block;
+}
